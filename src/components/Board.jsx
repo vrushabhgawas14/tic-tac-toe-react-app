@@ -39,7 +39,7 @@ export default function Board() {
   }
 
   if (isTie()) {
-    performReset();
+    setTimeout(performReset, 1000);
   }
 
   function isTie() {
@@ -63,12 +63,10 @@ export default function Board() {
   return (
     <div className="">
       {isWinner ? (
-        <>
-          <h1 className="text-4xl font-bold sm:text-2xl sm:text-center text-gray-300">
-            Player {turn ? "O" : "X"} has Won the Game
-            <Button text="Play Again" click={performReset} />
-          </h1>
-        </>
+        <h1 className="text-4xl font-bold sm:text-2xl sm:text-center text-gray-300">
+          Player {turn ? "O" : "X"} has Won the Game
+          <Button text="Play Again" click={performReset} />
+        </h1>
       ) : (
         <div className="text-center">
           <div className="flex">
