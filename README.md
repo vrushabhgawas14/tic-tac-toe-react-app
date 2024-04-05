@@ -16,7 +16,7 @@
 - git branch -M main
 - git remote add origin `url of github project`
 - git push -u origin main
-- npm run deploys
+- npm run deploy
 
 #### For Tailwind Setup
 
