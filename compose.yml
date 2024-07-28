@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  web:
+    container_name: portfolio
+    # restart: always
+    build: .
+    image: custom_portfolio:first
+    ports:
+      - '1313:3000' 
+      # 3000 is default port, if want change,
+      #change in package.json scripts "start": "PORT=3001 react-scripts start"
+    stdin_open: true
+    tty: true
+    develop:
+      watch:
+        - action : sync
+          path : .
+          target : /app
+          ignore : 
+            - node_modules/
+        - action: rebuild
+          path : package.json
